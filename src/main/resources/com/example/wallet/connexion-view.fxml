@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.wallet.controller.ConnexionController">
+   <children>
+      <Label layoutX="509.0" layoutY="416.0" prefHeight="47.0" prefWidth="82.0" text="Connexion">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Button layoutX="512.0" layoutY="718.0" mnemonicParsing="false" onAction="#onReturnButtonClick" text="Return" />
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="412.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="332.0" fitWidth="419.0" layoutX="328.0" layoutY="53.0">
+         <image>
+            <Image url="@../../../Image/logoConnexion.png" />
+         </image>
+      </ImageView>
+      <PasswordField fx:id="passwordField" layoutX="415.0" layoutY="571.0" />
+      <Label layoutX="612.0" layoutY="488.0" prefHeight="47.0" prefWidth="82.0" text="E-mail">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="612.0" layoutY="560.0" prefHeight="47.0" prefWidth="94.0" text="Mot de passe">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Button layoutX="503.0" layoutY="644.0" mnemonicParsing="false" onAction="#onConnexionButtonClick" prefHeight="25.0" prefWidth="88.0" text="Connexion" />
+      <TextField id="id" fx:id="idField" layoutX="415.0" layoutY="499.0" />
+      <Label fx:id="error_label" layoutX="158.0" layoutY="524.0" prefHeight="47.0" prefWidth="231.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

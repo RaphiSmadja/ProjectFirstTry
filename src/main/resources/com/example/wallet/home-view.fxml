@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane prefHeight="1024.0" prefWidth="768.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.wallet.controller.home.HomeController">
+    <top>
+        <VBox alignment="CENTER" spacing="5">
+            <MenuBar>
+                <menus>
+                    <Menu fx:id="walletsItems" mnemonicParsing="false" text="Vos Wallets">
+                    </Menu>
+                    <Menu text="Options">
+                        <items>
+                            <MenuItem fx:id="disconnectButton" mnemonicParsing="false" onAction="#onHandleDisconnectButton" text="Disconnect" />
+                        </items>
+                    </Menu>
+                </menus>
+            </MenuBar>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                <children>
+                    <Label fx:id="titleWallet" text="TITLE" textFill="#434343">
+                        <font>
+                            <Font name="Arial Bold" size="20.0" />
+                        </font>
+                        <VBox.margin>
+                            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                        </VBox.margin>
+                    </Label>
+                    <Label fx:id="moneyWallet" contentDisplay="CENTER" text="0€" textAlignment="CENTER" textFill="#686868">
+                        <font>
+                            <Font name="Arial" size="21.0" />
+                        </font>
+                        <VBox.margin>
+                            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                        </VBox.margin>
+                    </Label>
+                    <Region prefHeight="1.0" prefWidth="768.0" />
+                    <PieChart fx:id="pieChart" prefHeight="150" prefWidth="768.0">
+
+                    </PieChart>
+                    <Label fx:id="descriptionWallet" contentDisplay="CENTER" layoutX="382.0" layoutY="63.0" text="." textAlignment="CENTER" textFill="#00223c">
+                        <font>
+                            <Font name="Arial" size="15.0" />
+                        </font>
+                    </Label>
+                </children>
+            </VBox>
+            <HBox alignment="CENTER" prefHeight="66.0" prefWidth="766.0" spacing="5">
+                <Button fx:id="sellButton" onAction="#onHandleSellButton" style="-fx-background-color: green;" text="Sell" />
+                <Button fx:id="dépotButton" onAction="#onHandleDepotButton" style="-fx-background-color: red;" text="Deposit" />
+                <Button onAction="#onHandleEpargneButton" style="-fx-background-color: blue;" text="Saving" />
+                <Button fx:id="addWallet" onAction="#onAddMoneyButtonClick" style="-fx-background-color: yellow;" text="New Wallet" />
+                <Button fx:id="switchCurrencyWallet" onAction="#onHandleSwitchCurrency" style="-fx-background-color: orange;" text="Change Currency" />
+                <Button fx:id="cloneButton" onAction="#onHandleCloneButton" style="-fx-background-color: #800080;" text="Clone" />
+            </HBox>
+            <Label fx:id="moneyLeftLabel" text="moneyLeft" textFill="#484100">
+                <font>
+                    <Font name="Arial Bold" size="15.0" />
+                </font>
+                <VBox.margin>
+                    <Insets bottom="10.0" />
+                </VBox.margin>
+            </Label>
+        </VBox>
+    </top>
+    <center>
+
+        <TableView fx:id="tableView">
+            <columns>
+                <TableColumn fx:id="imageCol" prefWidth="76.0">
+                    <cellFactory>
+                        <PropertyValueFactory property="value" />
+                    </cellFactory>
+                </TableColumn>
+                <TableColumn fx:id="nameCol" prefWidth="76.0" text="Nom">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="name" />
+                    </cellValueFactory>
+                </TableColumn>
+
+                <TableColumn fx:id="symbolCol" prefWidth="65.0" text="Symbole">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="symbol" />
+                    </cellValueFactory>
+                </TableColumn>
+
+                <TableColumn fx:id="priceCol" prefWidth="106.0" text="Prix">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="currentPrice" />
+                    </cellValueFactory>
+                </TableColumn>
+
+                <TableColumn fx:id="marketCapCol" prefWidth="165.0" text="Capitalisation boursière">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="marketCap" />
+                    </cellValueFactory>
+                </TableColumn>
+
+                <TableColumn fx:id="last7dCol" prefWidth="350.0" text="Last 7 days">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="sparklineIn7d" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="actionCol" prefWidth="100.0" text="Action" />
+            </columns>
+        </TableView>
+    </center>
+    <right>
+        <VBox fx:id="newsVBox" prefHeight="714.0" prefWidth="280.0" spacing="10" style="-fx-background-color: #EEEEEE;">
+
+            <Text style="-fx-font-weight: bold; -fx-font-size: 16px;" text="News" VBox.vgrow="NEVER" />
+            <ListView fx:id="newsListView" VBox.vgrow="ALWAYS">
+
+            </ListView>
+        </VBox>
+    </right>
+    <bottom>
+            <TableView fx:id="transactionsTableView" prefHeight="100.0" prefWidth="1024">
+              <columns>
+                <TableColumn fx:id="typeField" prefWidth="204" text="Type" />
+                <TableColumn fx:id="priceField" prefWidth="204" text="Price" />
+                <TableColumn fx:id="currentField" prefWidth="204" text="Current" />
+                  <TableColumn fx:id="amountField" prefWidth="204" text="Amount" />
+                  <TableColumn fx:id="tokenField" prefWidth="205" text="Token" />
+                  <TableColumn fx:id="dateField" prefWidth="204" text="Date" />
+              </columns>
+            </TableView>
+    </bottom>
+</BorderPane>

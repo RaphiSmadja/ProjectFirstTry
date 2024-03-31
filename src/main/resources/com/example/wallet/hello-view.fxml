@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="768.0" prefWidth="1024.0" style="-fx-background-color: #0000FF;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.wallet.controller.HelloController">
+      <VBox alignment="CENTER" prefHeight="768.0" prefWidth="1024.0" spacing="20.0">
+          <padding>
+              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+          </padding>
+      <Label fx:id="welcomeText1" alignment="TOP_CENTER" layoutX="370.0" layoutY="498.0" prefHeight="17.0" prefWidth="304.0" style="-fx-background-color: #008080;" text="MY FINANCIAL WALLET !!">
+         <font>
+            <Font size="24.0" />
+         </font></Label>
+      <ImageView fitHeight="294.0" fitWidth="330.0">
+         <image>
+            <Image url="@../../../Image/logo3.png" />
+         </image>
+      </ImageView>
+
+          <Label fx:id="welcomeText" prefHeight="17.0" prefWidth="304.0" />
+          <Button id="connexion" fx:id="connexion" onAction="#onConnexionButtonClick" style="-fx-background-color: #808080;" text="Connexion" textAlignment="CENTER" />
+         <Button fx:id="inscrption" mnemonicParsing="false" onAction="#onInscriptionButtonClick" style="-fx-background-color: #808080;" text="Inscription" />
+      </VBox>
+</AnchorPane>
